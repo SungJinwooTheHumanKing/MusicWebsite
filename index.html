@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Modern Music Site</title>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body class="bg-gray-900 text-white font-sans">
+
+  <!-- Navbar -->
+  <header class="navbar">
+    <h1 class="logo">MyMusic</h1>
+    <nav class="nav-links">
+      <a href="#home">Home</a>
+      <a href="#songs">Songs</a>
+      <a href="#about">About</a>
+    </nav>
+  </header>
+
+  <!-- Hero -->
+  <section id="home" class="hero">
+    <h2 class="hero-title">Feel the Music</h2>
+    <p class="hero-subtitle">Stream your favorite tracks anytime, anywhere.</p>
+    <button class="hero-button">Get Started</button>
+  </section>
+
+  <!-- Featured Songs -->
+  <section id="songs" class="songs-section">
+    <h3 class="section-title">Featured Tracks</h3>
+    <div class="songs-grid">
+      <div class="song-card">
+        <h4 class="song-title">Lofi Beats</h4>
+        <audio controls>
+          <source src="https://www.soundhelix.com/examples/mp3/SoundHelix-Song-1.mp3" type="audio/mpeg">
+        </audio>
+      </div>
+      <div class="song-card">
+        <h4 class="song-title">Synthwave</h4>
+        <audio controls>
+          <source src="https://www.soundhelix.com/examples/mp3/SoundHelix-Song-2.mp3" type="audio/mpeg">
+        </audio>
+      </div>
+      <div class="song-card">
+        <h4 class="song-title">Chillhop</h4>
+        <audio controls>
+          <source src="https://www.soundhelix.com/examples/mp3/SoundHelix-Song-3.mp3" type="audio/mpeg">
+        </audio>
+      </div>
+    </div>
+  </section>
+
+  <!-- About Section -->
+  <section id="about" class="about-section">
+    <h3 class="section-title">About Us</h3>
+    <p class="about-text">
+      We're passionate about bringing the best audio experience to your fingertips.
+      Explore new artists, genres, and vibes all in one place.
+    </p>
+  </section>
+
+  <!-- Footer -->
+  <footer class="footer">
+    © 2025 MyMusic. All rights reserved.
+  </footer>
+
+  <script src="app.js"></script>
+</body>
+</html>
