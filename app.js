@@ -6,10 +6,11 @@ const likeButtons = document.querySelectorAll('.like-btn');
 
 // Play audio from playlist
 playlistItems.forEach((item, index) => {
-  item.addEventListener('click', () => {
-    const src = item.getAttribute('data-src');
-    audio.src = src;
-    audio.play();
+ item.addEventListener('click', () => {
+  audio.src = src;
+  audio.play(); // allowed here because it's after a click
+});
+
     nowPlaying.textContent = `Now Playing: ${src.split('/').pop()}`;
     miniPlayer.style.display = 'flex';
 
