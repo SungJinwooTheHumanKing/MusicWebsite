@@ -3,19 +3,22 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Modern Music Site</title>
+  <title>MyMusic – Stylish Music Platform</title>
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css">
   <link rel="stylesheet" href="style.css">
 </head>
-<body class="bg-gray-900 text-white font-sans">
+<body class="bg-gray-900 text-white font-sans transition-colors">
 
   <!-- Navbar -->
   <header class="navbar">
     <h1 class="logo">MyMusic</h1>
     <nav class="nav-links">
       <a href="#home">Home</a>
-      <a href="#songs">Songs</a>
+      <a href="#playlist">Playlist</a>
       <a href="#about">About</a>
+      <button id="theme-toggle" class="ml-4 px-3 py-1 rounded bg-purple-600 hover:bg-purple-500 text-sm">
+        Toggle Theme
+      </button>
     </nav>
   </header>
 
@@ -26,58 +29,47 @@
     <button class="hero-button">Get Started</button>
   </section>
 
-  <!-- Featured Songs -->
-  <section id="songs" class="songs-section">
-    <h3 class="section-title">Featured Tracks</h3>
-    <div class="songs-grid">
-      <div class="song-card">
-        <h4 class="song-title">Lofi Beats</h4>
-        <audio controls>
-          <source src="https://www.soundhelix.com/examples/mp3/SoundHelix-Song-1.mp3" type="audio/mpeg">
-        </audio>
-      </div>
-      <div class="song-card">
-        <h4 class="song-title">Synthwave</h4>
-        <audio controls>
-          <source src="https://www.soundhelix.com/examples/mp3/SoundHelix-Song-2.mp3" type="audio/mpeg">
-        </audio>
-      </div>
-      <div class="song-card">
-        <h4 class="song-title">Chillhop</h4>
-        <audio controls>
-          <source src="https://www.soundhelix.com/examples/mp3/SoundHelix-Song-3.mp3" type="audio/mpeg">
-        </audio>
-      </div>
+  <!-- Custom Player with Playlist -->
+  <section id="playlist" class="songs-section">
+    <h3 class="section-title">Featured Playlist</h3>
+    <ul id="playlist" class="songs-grid">
+      <li class="track" data-src="https://www.soundhelix.com/examples/mp3/SoundHelix-Song-1.mp3">
+        Lofi Beats
+        <button class="like-btn">♥</button>
+      </li>
+      <li class="track" data-src="https://www.soundhelix.com/examples/mp3/SoundHelix-Song-2.mp3">
+        Synthwave
+        <button class="like-btn">♥</button>
+      </li>
+      <li class="track" data-src="https://www.soundhelix.com/examples/mp3/SoundHelix-Song-3.mp3">
+        Chillhop
+        <button class="like-btn">♥</button>
+      </li>
+    </ul>
+
+    <div class="mt-6">
+      <audio id="main-audio" controls class="w-full rounded bg-gray-700 p-2"></audio>
+      <canvas id="visualizer" width="600" height="100" class="mx-auto mt-6"></canvas>
     </div>
   </section>
 
-  <section id="custom-player" class="p-8 max-w-2xl mx-auto text-center">
-  <h3 class="text-2xl font-semibold mb-4">Playlist</h3>
-  <ul id="playlist" class="space-y-4">
-    <li class="track cursor-pointer bg-gray-800 p-4 rounded" data-src="https://www.soundhelix.com/examples/mp3/SoundHelix-Song-1.mp3">Lofi Beats</li>
-    <li class="track cursor-pointer bg-gray-800 p-4 rounded" data-src="https://www.soundhelix.com/examples/mp3/SoundHelix-Song-2.mp3">Synthwave</li>
-    <li class="track cursor-pointer bg-gray-800 p-4 rounded" data-src="https://www.soundhelix.com/examples/mp3/SoundHelix-Song-3.mp3">Chillhop</li>
-  </ul>
-
-  <div class="mt-6">
-    <audio id="main-audio" controls class="w-full rounded bg-gray-700 p-2"></audio>
-  </div>
-</section>
-
-
-  <!-- About Section -->
+  <!-- About -->
   <section id="about" class="about-section">
     <h3 class="section-title">About Us</h3>
-    <p class="about-text">
-      We're passionate about bringing the best audio experience to your fingertips.
-      Explore new artists, genres, and vibes all in one place.
-    </p>
+    <p class="about-text">We're passionate about sound and style. Discover artists, playlists, and more with our advanced music platform.</p>
   </section>
 
   <!-- Footer -->
   <footer class="footer">
     © 2025 MyMusic. All rights reserved.
   </footer>
+
+  <!-- Floating Mini Player -->
+  <div id="mini-player" class="mini-player">
+    <span id="now-playing">Now Playing: None</span>
+    <button onclick="audio.play()">Play</button>
+    <button onclick="audio.pause()">Pause</button>
+  </div>
 
   <script src="app.js"></script>
 </body>
