@@ -2,28 +2,54 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <title>Music Portal</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Modern Music Hub</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;600&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="style.css" />
-  <script src="https://www.gstatic.com/firebasejs/9.6.1/firebase-app.js"></script>
-  <script src="https://www.gstatic.com/firebasejs/9.6.1/firebase-auth.js"></script>
-  <script defer src="firebase-config.js"></script>
-  <script defer src="app.js"></script>
+  <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
 </head>
 <body>
   <header>
-    <h1 class="text-4xl font-bold">🎧 Music Hub</h1>
+    <h1>🎵 Music Hub</h1>
     <div class="auth-buttons">
-      <button onclick="googleLogin()">Login with Google</button>
-      <button onclick="facebookLogin()">Login with Facebook</button>
+      <button onclick="loginWith('google')">Login with Google</button>
+      <button onclick="loginWith('facebook')">Login with Facebook</button>
+      <button onclick="loginWith('instagram')">Login with Instagram</button>
     </div>
   </header>
 
-  <main>
-    <input type="text" id="search" placeholder="Search Spotify..." />
-    <button onclick="searchSpotify(document.getElementById('search').value)">Search</button>
+  <section class="hero">
+    <h2>Feel the Beat</h2>
+    <p>Stream your favorite music with style and rhythm. Modern design. Smooth experience. Social logins.</p>
+  </section>
 
-    <div id="results"></div>
-  </main>
+  <section class="features">
+    <div class="feature-card">
+      <i class="fas fa-music"></i>
+      <h3>Curated Playlists</h3>
+      <p>Discover playlists tailored to your taste using AI recommendations.</p>
+    </div>
+    <div class="feature-card">
+      <i class="fas fa-wave-square"></i>
+      <h3>Visualizer</h3>
+      <p>Enjoy a mesmerizing audio visualizer synced to your music.</p>
+    </div>
+    <div class="feature-card">
+      <i class="fas fa-heart"></i>
+      <h3>Favorites</h3>
+      <p>Like and save your favorite songs to your profile across devices.</p>
+    </div>
+  </section>
+
+  <div class="audio-player">
+    <audio controls>
+      <source src="sample.mp3" type="audio/mpeg" />
+      Your browser does not support the audio element.
+    </audio>
+  </div>
+
+  <script src="script.js"></script>
 </body>
 </html>
+
 
