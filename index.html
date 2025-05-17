@@ -2,41 +2,28 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Music Vibe</title>
-  <link rel="stylesheet" href="style.css"/>
+  <title>Music Portal</title>
+  <link rel="stylesheet" href="style.css" />
+  <script src="https://www.gstatic.com/firebasejs/9.6.1/firebase-app.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/9.6.1/firebase-auth.js"></script>
+  <script defer src="firebase-config.js"></script>
+  <script defer src="app.js"></script>
 </head>
 <body>
   <header>
-    <h1>🎵 Music Vibe</h1>
-    <input type="text" id="search" placeholder="Search songs..."/>
+    <h1 class="text-4xl font-bold">🎧 Music Hub</h1>
+    <div class="auth-buttons">
+      <button onclick="googleLogin()">Login with Google</button>
+      <button onclick="facebookLogin()">Login with Facebook</button>
+    </div>
   </header>
 
-  <section id="trending-songs">
-    <h2>🔥 Trending Songs</h2>
-    <div class="song-list" id="song-list">
-      <!-- Songs injected by JS -->
-    </div>
-  </section>
+  <main>
+    <input type="text" id="search" placeholder="Search Spotify..." />
+    <button onclick="searchSpotify(document.getElementById('search').value)">Search</button>
 
-  <section id="trending-playlists">
-    <h2>🎧 Trending Playlists</h2>
-    <div class="playlist-list">
-      <div class="playlist">Chill Vibes</div>
-      <div class="playlist">Workout Hits</div>
-      <div class="playlist">Top 50</div>
-    </div>
-  </section>
-
-  <div id="player" class="hidden">
-    <div class="player-controls">
-      <span id="close-player">⬇</span>
-      <h3 id="player-title">Now Playing</h3>
-      <canvas id="visualizer"></canvas>
-      <audio id="audio" controls autoplay></audio>
-    </div>
-  </div>
-
-  <script src="app.js"></script>
+    <div id="results"></div>
+  </main>
 </body>
 </html>
+
