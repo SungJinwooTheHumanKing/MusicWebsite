@@ -9,6 +9,63 @@ const searchInput = document.getElementById("search");
 const player = document.getElementById("player");
 const playerTitle = document.getElementById("player-title");
 const audio = document.getElementById("audio");
+const canvas = document.getElementById("visualizer");
+const ctx = canvas.getContext("2d");
+
+let audioCtx, analyser, source, dataArray, animationId;
+
+function initVisualizer() {
+  if (!audioCtx) {
+    audioCtx = new (window.AudioContext || window.webkitAudioContext)();
+    analyser = audioCtx.createAnalyser();
+    source = audioCtx.createMediaElementSource(audio);
+    source.connect(analyser);
+    analyser.connect(audioCtx.destination);
+    analyser.fftSize = 256;
+
+    const bufferLength = analyser.frequencyBinCount;
+    dataArray = new Uint8Array(bufferLength);
+  }
+
+  drawVisualizer();
+}
+
+function drawVisualizer() {
+  animationId && cancelAnimationFrame(animationId);
+  const WIDTH = canvas.width = canvas.offsetWidth;
+  const HEIGHT = canvas.height = canvas.offsetHeight;
+
+  function draw() {
+    animationId = requestAnimationFrame(draw);
+
+    analyser.getByteFrequencyData(dataArray);
+
+    ctx.fillStyle = '#000';
+    ctx.fillRect(0, 0, WIDTH, HEIGHT);
+
+    const barWidth = WIDTH / dataArray.length;
+    let x = 0;
+
+    for (let i = 0; i < dataArray.length; i++) {
+      const barHeight = dataArray[i];
+      const r = barHeight + 25;
+      const g = 250 * (i / dataArray.length);
+      const b = 50;
+
+      ctx.fillStyle = `rgb(${r},${g},${b})`;
+      ctx.fillRect(x, HEIGHT - barHeight, barWidth - 1, barHeight);
+
+      x += barWidth;
+    }
+  }
+
+  draw();
+}
+
+audio.addEventListener("play", () => {
+  initVisualizer();
+});
+
 const closePlayer = document.getElementById("close-player");
 
 let currentPlaying = null;
