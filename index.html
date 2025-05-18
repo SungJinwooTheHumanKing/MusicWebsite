@@ -3,53 +3,37 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Modern Music Hub</title>
-  <script src="https://cdn.auth0.com/js/auth0-spa-js/2.0/auth0-spa-js.production.js"></script>
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;600&display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="style.css" />
-  <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+  <title>Modern Music App</title>
+  <link rel="stylesheet" href="styles.css" />
 </head>
 <body>
-  <header>
-    <h1>🎵 Music Hub</h1>
-   <div class="auth-buttons">
-  <button id="login">Login</button>
-  <button id="logout" style="display:none;">Logout</button>
-</div>
-</header>
+  <div class="app">
+    <header>
+      <h1>🎵 MyMusic</h1>
+      <div class="auth-buttons">
+        <button id="google-login">Login with Google</button>
+        <button id="facebook-login">Login with Facebook</button>
+        <button id="instagram-login">Login with Instagram</button>
+      </div>
+      <button class="theme-toggle">🌓</button>
+    </header>
 
-  <section class="hero">
-    <h2>Feel the Beat</h2>
-    <p>Stream your favorite music with style and rhythm. Modern design. Smooth experience. Social logins.</p>
-  </section>
-
-  <section class="features">
-    <div class="feature-card">
-      <i class="fas fa-music"></i>
-      <h3>Curated Playlists</h3>
-      <p>Discover playlists tailored to your taste using AI recommendations.</p>
-    </div>
-    <div class="feature-card">
-      <i class="fas fa-wave-square"></i>
-      <h3>Visualizer</h3>
-      <p>Enjoy a mesmerizing audio visualizer synced to your music.</p>
-    </div>
-    <div class="feature-card">
-      <i class="fas fa-heart"></i>
-      <h3>Favorites</h3>
-      <p>Like and save your favorite songs to your profile across devices.</p>
-    </div>
-  </section>
-
-  <div class="audio-player">
-    <audio controls>
-      <source src="sample.mp3" type="audio/mpeg" />
-      Your browser does not support the audio element.
-    </audio>
+    <main>
+      <div class="player-container">
+        <canvas id="visualizer"></canvas>
+        <audio id="audio" controls>
+          <source src="song.mp3" type="audio/mp3" />
+        </audio>
+        <div class="playlist">
+          <button onclick="loadTrack('song.mp3')">🎧 Song 1</button>
+          <button onclick="loadTrack('song2.mp3')">🎶 Song 2</button>
+        </div>
+      </div>
+    </main>
   </div>
 
-  <script src="app.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/9.0.0/firebase-app.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/9.0.0/firebase-auth.js"></script>
+  <script src="script.js"></script>
 </body>
 </html>
-
-
