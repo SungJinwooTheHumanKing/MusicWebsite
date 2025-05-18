@@ -1,39 +1,25 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Modern Music App</title>
-  <link rel="stylesheet" href="styles.css" />
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Echo Altar</title>
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <div class="app">
-    <header>
-      <h1>🎵 MyMusic</h1>
-      <div class="auth-buttons">
-        <button id="google-login">Login with Google</button>
-        <button id="facebook-login">Login with Facebook</button>
-        <button id="instagram-login">Login with Instagram</button>
-      </div>
-      <button class="theme-toggle">🌓</button>
-    </header>
 
-    <main>
-      <div class="player-container">
-        <canvas id="visualizer"></canvas>
-        <audio id="audio" controls>
-          <source src="song.mp3" type="audio/mp3" />
-        </audio>
-        <div class="playlist">
-          <button onclick="loadTrack('song.mp3')">🎧 Song 1</button>
-          <button onclick="loadTrack('song2.mp3')">🎶 Song 2</button>
-        </div>
-      </div>
-    </main>
-  </div>
+  <section class="hero">
+    <h1>Echo Altar</h1>
+    <div class="scroll-indicator">▼ Scroll Down</div>
+  </section>
 
-  <script src="https://www.gstatic.com/firebasejs/9.0.0/firebase-app.js"></script>
-  <script src="https://www.gstatic.com/firebasejs/9.0.0/firebase-auth.js"></script>
+  <section class="content" id="welcomeSection">
+    <h1>Welcome to Echo Altar</h1>
+    <p>Discover a sanctuary for sound – where nature meets music in a mystical harmony. Explore, listen, and lose yourself in the rhythm of Echo Altar.</p>
+    <button class="visit-btn" onclick="location.href='music.html'">Visit Site</button>
+  </section>
+
   <script src="script.js"></script>
 </body>
 </html>
+
