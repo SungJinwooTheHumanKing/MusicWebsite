@@ -1,0 +1,74 @@
+:root {
+  --bg: #121212;
+  --text: #fff;
+  --accent: #1db954;
+}
+
+body {
+  margin: 0;
+  font-family: 'Segoe UI', sans-serif;
+  background: var(--bg);
+  color: var(--text);
+  transition: background 0.3s ease;
+}
+
+.app {
+  padding: 2rem;
+  text-align: center;
+}
+
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.auth-buttons button {
+  margin: 0 0.5rem;
+  padding: 0.5rem 1rem;
+  background: var(--accent);
+  border: none;
+  color: white;
+  cursor: pointer;
+  border-radius: 8px;
+  transition: transform 0.2s;
+}
+
+.auth-buttons button:hover {
+  transform: scale(1.05);
+}
+
+.theme-toggle {
+  background: none;
+  border: none;
+  font-size: 1.5rem;
+  cursor: pointer;
+}
+
+.player-container {
+  margin-top: 2rem;
+}
+
+audio {
+  width: 100%;
+  margin-top: 1rem;
+}
+
+.playlist button {
+  background: none;
+  border: 1px solid var(--accent);
+  color: var(--accent);
+  margin: 0.5rem;
+  padding: 0.5rem 1rem;
+  cursor: pointer;
+  border-radius: 6px;
+}
+
+canvas {
+  width: 100%;
+  height: 150px;
+  background: #000;
+  display: block;
+  margin: auto;
+  border-radius: 12px;
+}
