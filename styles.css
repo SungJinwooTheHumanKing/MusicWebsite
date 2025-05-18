@@ -51,14 +51,16 @@ body, html {
 .content h1 {
   font-size: 2.5rem;
   margin-bottom: 20px;
+  color: #b2e4f7; /* updated color */
 }
 
 .content p {
   font-size: 1.1rem;
   max-width: 600px;
   margin: 0 auto 30px;
-  color: #000000;
+  color: #b2e4f7; /* updated color */
 }
+
 
 .visit-btn {
   padding: 12px 24px;
