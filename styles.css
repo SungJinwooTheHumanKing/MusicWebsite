@@ -11,14 +11,14 @@ body, html {
 }
 
 .hero {
-  height: 100vh;
+  height: 80vh;
   background: url('https://i.postimg.cc/VvRLMfQz/Echo-Altar-Background-Image.png') no-repeat center center/cover;
   display: flex;
   justify-content: center;
   align-items: center;
   color: white;
   text-shadow: 2px 2px 4px #000;
-  flex-direction: contain;
+  flex-direction: column;
   position: relative;
 }
 
