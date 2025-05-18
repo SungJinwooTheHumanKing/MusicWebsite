@@ -38,7 +38,7 @@ body, html {
 .content {
   padding: 100px 20px;
   text-align: center;
-  opacity: 1;
+  opacity: 3;
   transform: translateY(50px);
   transition: all 1s ease-in-out;
 }
